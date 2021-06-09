@@ -170,3 +170,31 @@ for(i in 1..10) {
         println("Le nombre $nombre n'est pas un nombre premier")
     }
 ```
+
+## Jeu du plus ou moins
+
+```java
+    val nombreAleatoire: Int = (1..10).random()
+    println(nombreAleatoire)
+
+    var choix: Int
+    var compte = 1
+    var pasfini: Boolean = false
+    do {
+        compte++;
+        println("Veuillez choisir un nombre")
+        choix = readLine()!!.toInt()
+        when {
+            (choix < nombreAleatoire) -> println("trop petit")
+            (choix > nombreAleatoire) -> println("Trop grand")
+            else -> pasfini = true
+        }
+    }while (!pasfini)
+    if(pasfini) {
+        println("Bravo ! Vous avez trouvé en $compte tentatives !")
+    }
+    else {
+        println("Perdu. Le nombre etait $nombreAleatoire")
+    }
+}
+```
