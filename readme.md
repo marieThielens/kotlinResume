@@ -51,7 +51,7 @@ val retour:String = """
 ```java
 val r1 : IntRange = 1..5 // de 1 à 5
 val r2 : IntRande = 1.RangeTo(5) // avec la méthode
-val r3 : 1 until 5 // rande de 1 à 4 (5 est non compris)
+val r3 : 1 until 5 // range de 1 à 4 (5 est non compris)
 val r4 : 5 downTo 1 // décroissant
 
 val r5 IntProgression = 1..5 step 2 // avec un interval 1-3-5
@@ -108,4 +108,65 @@ val grade = when (number) {
     else -> "Vaux mieux que j'dise rien"
 }
 println("Votre grade : $grade ")
+```
+
+## Boucle
+
+### while
+
+### do while
+
+```java
+println("Veuillez encoder un chiffre entre 0 et 10")
+var input: Int
+do {
+    println("/ ")
+    input = readLine()!!.toInt()
+} while (input < 0 || input > 0)
+```
+
+### for
+
+```java
+// Parcourir les éléments
+for (value: Sting in nom) {
+    println("vaut $value")
+}
+// Parcourir les indices
+ for(i in nom.indices) {
+     println("l'element est à l'index $i et vaut ${nom[i]}")
+}
+// index + valeur    
+for((index, valeur) in nom.withIndex()) {
+    println("L'élément à l'index $index vaut $value")
+}
+
+// Parcourir des plages de valeurs
+for(i in 1..10) {
+    println("$i")
+}
+```
+## Savoir si un nombre est un nombre premier
+
+```java
+    var estPremier : Boolean = false
+    if (nombre ==2) {
+        estPremier = true
+    }
+    else if (nombre > 2 && nombre % 2 !== 0) { // plus grand que 2 et n'est pas paire
+        val division = 3 until nombre step 2 // a partir de 3 jusqu'au nombre par saut de 2 (on a pas besoin des pairs)
+
+        for(div: Int in division) {
+            if(nombre % div == 0) {
+                estPremier = false;
+                break;
+            }
+        }
+    }
+    if(estPremier){
+        println("Le nombre $nombre est un nombre premier")
+    }
+    else {
+        println("Le nombre $nombre n'est pas un nombre premier")
+    }
 ```
