@@ -1,5 +1,8 @@
 # Kotlin
 
+- null : var rue:String? = null
+- until : 
+
 ## Variable
 
 **constante** : `val prenom : String = "Marie"`
