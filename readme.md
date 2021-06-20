@@ -1,5 +1,7 @@
 # Kotlin
 
+Inteliji : New Project : Kotlin / Project Template : Console Application / Project JDK : 1.8
+
 - null : var rue:String? = null
 - until : 
 
@@ -10,7 +12,20 @@
 **nulle** : pour déclarer une variable nulle il faut rajouter ? après son type
 
 ```java
- var rue:String? = null
+var rien: String? = nulle
+var rue:String? = "Bonjour Kotlin"
+
+println("Longeur du mot : ${rien?.length}") // Longeur du mot : null
+
+if(rue?.isNullOrBlank() as Boolean) {
+    // On autorise que la string soit nulle
+    println("longueurMot " + rue?.length)
+    // => longueurMot null
+}
+
+// !! : On lève une exeption si la string est nulle. Ici la variable NE PEUT PAS être nulle
+  println("longueurMot " + rue!!.length)
+  // => error exeption
 ```
 
 **Converstion**
